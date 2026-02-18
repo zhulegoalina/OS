@@ -69,6 +69,7 @@
    - Правильный порядок закрытия дескрипторов
 
 ### Структура проекта
+```bash
 lab1/
 ├── CMakeLists.txt
 ├── include/
@@ -79,6 +80,7 @@ lab1/
 │ └── Main.cpp
 └── tests/
 └── test_processes.cpp
+```
 
 ### Сборка
 ```bash
@@ -86,11 +88,16 @@ mkdir build
 cd build
 cmake ..
 cmake --build . --config Release
+```
 
 ### Запуск
+```bash
 cd Release
 Main.exe
+```
 
 ### Тестирование
+```bash
 cd Release
 ProcessTests.exe
+```
