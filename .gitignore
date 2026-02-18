@@ -1,0 +1,27 @@
+# Папки сборки
+build/
+out/
+.vs/
+
+# Временные файлы
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.pdb
+*.dll
+*.exp
+*.lib
+
+# Папки с собранными exe
+Debug/
+Release/
+x64/
+x86/
+
+# Файлы Visual Studio
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.user
+*.suo
