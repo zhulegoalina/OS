@@ -4,25 +4,20 @@ project(MessageQueue)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Для Windows
 if(WIN32)
     set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 endif()
 
-# Указываем путь к исходным файлам
 set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 set(TESTS_DIR ${CMAKE_CURRENT_SOURCE_DIR}/tests)
 
-# Основные исполняемые файлы (с полными путями)
 add_executable(receiver ${SRC_DIR}/receiver.cpp)
 add_executable(sender ${SRC_DIR}/sender.cpp)
 
-# Настройка для Visual Studio
 if(MSVC)
     target_compile_options(receiver PRIVATE /W4)
     target_compile_options(sender PRIVATE /W4)
     
-    # Подключаем библиотеки Windows
     target_link_libraries(receiver)
     target_link_libraries(sender)
 endif()
@@ -41,6 +36,5 @@ add_executable(tests ${TESTS_DIR}/test_queue.cpp)
 target_link_libraries(tests gtest_main)
 target_include_directories(tests PRIVATE ${SRC_DIR})
 
-# Добавляем тесты
 include(GoogleTest)
 gtest_discover_tests(tests)
